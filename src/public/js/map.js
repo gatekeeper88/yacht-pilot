@@ -149,8 +149,7 @@ app.controller('CenterController', ['$scope',
 
 		function drawMapElements() {
 			MapApiService.getAllRoutes()
-				.then(function(routes) {
- routes.forEach(drawRoute);});
+				.then(function(routes) { routes.forEach(drawRoute); });
 
 			// MapApiService.getAllMarkers()
 				// .then(function(markers) { markers.forEach(drawMarker) });
@@ -159,11 +158,11 @@ app.controller('CenterController', ['$scope',
 		function drawRoute(route) {
 			if (!route || !route.points) return;
 			let latLngs = route.points.map(function(point) {
-             	return L.latLng(point.lat, point.lng);
-           	});
-            let polyline = L.polyline(latLngs, {color: 'black'});
-            polyline.addTo($scope.map);
-            MapEventHandlers.onPolylineDrawn(polyline);
+			 	return L.latLng(point.lat, point.lng);
+				});
+			let polyline = L.polyline(latLngs, {color: 'black'});
+			polyline.addTo($scope.map);
+			MapEventHandlers.onPolylineDrawn(polyline);
 		}
 
 		function drawMarker(marker) {
