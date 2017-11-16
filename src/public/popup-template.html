@@ -1,0 +1,13 @@
+<div style="color: red">
+	<div ng-if="!selectedMarker.editing">	
+		<div>
+			{{name}}
+		</div>
+	</div>
+	<div ng-if="selectedMarker.editing">	
+		{{name}}
+		Place Name: <input type="text" ng-model="name"">
+		
+	</div>
+	<button type="button" ng-click="toggleEditing()" class="btn btn-secondary btn-sm">Toggle Editing</button>
+</div>
