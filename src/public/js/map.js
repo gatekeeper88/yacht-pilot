@@ -140,11 +140,11 @@ app.controller('CenterController', ['$scope',
 		function displayWeatherForecast(forecast) {
 			let timeZone = 1000 * (new Date().getTimezoneOffset())*(-60);
 			if (!forecast) return;
-       		forecast.list = forecast.list.slice(0, 5);
-            forecast.list.forEach(function(day) {
-                day.date = new Date(day.dt * 1000 + timeZone);
-                day.imageSrc = '/images/weather/' + day.weather[0].icon + '.png';
-            });
+				forecast.list = forecast.list.slice(0, 5);
+			forecast.list.forEach(function(day) {
+			    day.date = new Date(day.dt * 1000 + timeZone);
+			    day.imageSrc = '/images/weather/' + day.weather[0].icon + '.png';
+			});
 		}
 
 		function drawMapElements() {
