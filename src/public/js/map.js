@@ -148,8 +148,8 @@ app.controller('CenterController', ['$scope',
 			MapApiService.getAllRoutes()
 				.then(function(routes) { routes.forEach(drawRoute); });
 
-			// MapApiService.getAllMarkers()
-				// .then(function(markers) { markers.forEach(drawMarker) });
+			MapApiService.getAllMarkers()
+				.then(function(markers) { markers.forEach(drawMarker) });
 		}
 
 		function drawRoute(route) {
